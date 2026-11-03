@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------ */
+/* Global Theme Values            */
+/* ------------------------------ */
+:root {
+  --eb-start: #7c3aed;   /* purple-600 */
+  --eb-end:   #2563eb;   /* blue-600 */
+  --eb-accent:#6366f1;   /* indigo-500 */
+  --eb-bg-top:#f3e8ff;   /* LP2 top (lavender) */
+  --eb-bg-btm:#ffffff;   /* LP2 bottom (white) */
+}
+
+/* LP2: soft lavender -> white background */
+body {
+  background: linear-gradient(180deg, var(--eb-bg-top) 0%, var(--eb-bg-btm) 100%);
+  color: #0f172a; /* slate-900 */
+  min-height: 100vh;
+}
+
+/* Center layout width */
+.container-narrow { @apply max-w-5xl mx-auto px-4; }
+
+/* Hero gradient */
+.hero-gradient {
+  background: radial-gradient(1200px 600px at -10% -10%, rgba(255,255,255,0.25) 0, rgba(255,255,255,0) 60%),
+              radial-gradient(900px 500px at 110% -20%, rgba(255,255,255,0.18) 0, rgba(255,255,255,0) 60%),
+              linear-gradient(120deg, var(--eb-start) 0%, var(--eb-end) 100%);
+  color: white;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Glassy navbar */
+.navbar-blur { backdrop-filter: saturate(140%) blur(6px); -webkit-backdrop-filter: saturate(140%) blur(6px); }
+
+/* Card */
+.card { @apply bg-white rounded-2xl border shadow-sm p-6; }
+
+/* Inputs */
+.input { @apply w-full border rounded-2xl px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500; }
+
+/* Buttons */
+.btn { @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition; }
+.btn-primary { background: linear-gradient(90deg, var(--eb-start), var(--eb-end)); color: white; }
+.btn-primary:hover { @apply opacity-90; }
+.btn-light { @apply border bg-white text-gray-800; }
+.btn-light:hover { @apply bg-gray-100; }
+.btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,.6); color: white; }
+.btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+.section-title { @apply text-xl font-semibold; }
+.badge { @apply text-xs px-2 py-1 rounded-full border; }
